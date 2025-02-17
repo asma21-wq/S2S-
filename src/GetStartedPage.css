@@ -1,0 +1,88 @@
+/* General Styles for the Get Started Page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+  
+  /* Header Section */
+  .get-started-header {
+    background: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .get-started-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .get-started-header p {
+    font-size: 1.2em;
+  }
+  
+  /* Steps Section */
+  .steps {
+    padding: 50px 20px;
+    text-align: center;
+    background: white;
+  }
+  
+  .steps h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .step {
+    background: #e8f1f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .step h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .step p {
+    font-size: 1em;
+    color: #333;
+  }
+  
+  /* Call to Action Section */
+  .cta {
+    text-align: center;
+    padding: 50px 20px;
+    background: #333;
+    color: white;
+  }
+  
+  .cta h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #e65b50;
+  }
+  

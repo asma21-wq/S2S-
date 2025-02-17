@@ -1,0 +1,111 @@
+/* Discussions Page Container */
+.discussions-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.discussions-page h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.discussions-page > p {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Discussion List */
+.discussion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.discussion-item {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.discussion-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  border-color: #3498db;
+}
+
+.discussion-item h3 {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.2rem;
+  flex-grow: 1;
+  margin-right: 1rem;
+}
+
+.discussion-item a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #3498db;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.discussion-item a:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .discussions-page {
+    padding: 1rem;
+  }
+
+  .discussions-page h1 {
+    font-size: 2rem;
+  }
+
+  .discussion-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .discussion-item h3 {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .discussion-item a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Accessibility Enhancements */
+.discussion-item a:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* Subtle Background Pattern */
+.discussions-page {
+  background-color: #f4f6f7;
+  background-image: 
+    linear-gradient(to right, rgba(52, 152, 219, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(52, 152, 219, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}

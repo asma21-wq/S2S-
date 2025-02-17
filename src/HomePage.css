@@ -1,0 +1,249 @@
+/* General Styles */
+.home-container {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero-section {
+  display: flex; /* Set up a horizontal layout with flexbox */
+  justify-content: space-between; /* Space out the content and image */
+  align-items: center; /* Align items vertically in the center */
+  padding: 2rem; /* Add padding around the section */
+  background-color: #f0f4f8; /* Optional: background color for the section */
+}
+
+.hero-content {
+  flex: 1; /* Allow the content to take up one part of the available space */
+  margin-right: 2rem; /* Add space between the text and the image */
+  display: flex; /* Enable flexbox for internal layout */
+  flex-direction: column; /* Stack the elements vertically */
+  align-items: center; /* Center-align content horizontally */
+  text-align: center; /* Center-align text */
+}
+
+.hero-content h1 {
+  font-size: 2.5rem; /* Set font size for the heading */
+  color: #2c3e50; /* Text color */
+  line-height: 1.5; /* Adjust line spacing for readability */
+  margin-bottom: 1rem; /* Add space below the heading */
+}
+
+.hero-content .cta-button {
+  display: inline-block; /* Make the button behave like an inline-block */
+  padding: 0.8rem 1.5rem; /* Adjust button padding */
+  background-color: #3498db; /* Button background color */
+  color: #fff; /* Text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Round the button corners */
+  font-size: 1rem; /* Set button font size */
+  margin-top: 1.5rem; /* Add space above the button */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.hero-content .cta-button:hover {
+  background-color: #2980b9; /* Darker shade on hover */
+}
+
+.hero-image {
+  flex: 1; /* Allow the image container to take up one part of the available space */
+  text-align: right; /* Align the image to the right */
+}
+
+.hero-image img {
+  max-width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Stack the content and image vertically */
+    text-align: center; /* Center-align text */
+  }
+
+  .hero-content {
+    margin-right: 0; /* Remove right margin for stacked layout */
+    margin-bottom: 1rem; /* Add spacing below the text */
+  }
+
+  .hero-image {
+    text-align: center; /* Center-align the image */
+  }
+}
+
+
+.hero-image img {
+  max-width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Stack the content and image vertically */
+    text-align: center; /* Center-align text */
+  }
+
+  .hero-content {
+    margin-right: 0; /* Remove right margin for stacked layout */
+    margin-bottom: 1rem; /* Add spacing below the text */
+  }
+
+  .hero-image {
+    text-align: center; /* Center-align the image */
+  }
+}
+
+.hero-image img {
+  max-width: 100%; /* Ensure the image does not exceed its container width */
+  height: auto; /* Maintain the image's aspect ratio */
+  border-radius: 8px; 
+ 
+}
+
+/* Latest Projects Section */
+.latest-projects-section {
+  padding: 2rem;
+  flex-direction: row;
+  background: #fff;
+  text-align: center;
+}
+
+.latest-projects-section h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+/* Projects Container */
+.projects-container {
+  flex-direction: row;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Distribute the cards evenly across one line */
+  gap: 2rem; /* Space between the cards */
+  align-items: flex-start; /* Align cards to the top */
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+/* Each card styling */
+.project-card {
+
+  width: 18rem; /* Fixed card width */
+  padding: 1rem;
+  border: 1px solid #ddd; 
+  border-radius: 5px;
+  background: #f9f9f9;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+/* Image inside cards */
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Card title */
+.project-card h3 {
+  color: #3498db;
+  margin-bottom: 1rem;
+}
+
+/* Card text */
+.project-card p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+  .projects-container {
+    justify-content: center;
+    display: flex;
+    /* Center the cards in smaller screens */
+  }
+  .project-card {
+    width: 45%; /* Cards take up 45% of the container width on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: 100%; /* Cards take up the full width on small screens */
+  }
+}
+
+/* Famous Projects Section */
+.famous-projects-section {
+  padding: 2rem;
+  background: #fff;
+  text-align: center;
+}
+
+.famous-projects-section h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.projects-container {
+  display: flex;
+
+  justify-content: space-around;
+  margin-top: 1.5rem;
+  gap: 2rem;
+  flex-wrap: wrap; /* Allow wrapping of cards */
+}
+
+/* Share Section */
+
+
+/* Feedback Section */
+.feedback-section {
+  background: #f9f9f9;
+  border-top: 2px solid #ddd;
+  padding: 2rem;
+  text-align: center;
+}
+
+.feedback-section p {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+/* Networking Section */
+.networking-section {
+  background: #eaf2f8;
+  padding: 2rem;
+  text-align: center;
+}
+
+.networking-section p {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+.networking-section .cta-button {
+  margin-top: 1rem;
+}
+
+/* Footer */
+.home-footer {
+  padding: 1rem;
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+}

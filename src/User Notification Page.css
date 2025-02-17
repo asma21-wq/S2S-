@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  --color-background: #f4f4f7;
+  --color-white: #ffffff;
+  --color-primary: #3b82f6;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-info: #6366f1;
+  --color-message: #8b5cf6;
+  --color-text-dark: #1f2937;
+  --color-text-light: #6b7280;
+  --color-border: #e5e7eb;
+}
+
+.notification-page {
+  font-family: 'Inter', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: var(--color-background);
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.notification-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.75rem;
+  color: var(--color-text-dark);
+}
+
+.unread-count {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.clear-all {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.clear-all:hover {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.notification-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.notification-filters button {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.notification-filters button.active,
+.notification-filters button:hover {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.notifications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.notification.unread {
+  background-color: #f9fafb;
+}
+
+.notification.success {
+  border-left-color: var(--color-success);
+}
+
+.notification.warning {
+  border-left-color: var(--color-warning);
+}
+
+.notification.info {
+  border-left-color: var(--color-info);
+}
+
+.notification.message {
+  border-left-color: var(--color-message);
+}
+
+.notification-icon {
+  margin-right: 1rem;
+  color: var(--color-text-light);
+}
+
+.notification-content {
+  flex-grow: 1;
+}
+
+.notification-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-dark);
+  font-size: 1rem;
+}
+
+.notification-content p {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+.notification-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.notification-actions button {
+  background-color: transparent;
+  border: none;
+  color: var(--color-text-light);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.notification-actions button:hover {
+  background-color: var(--color-background);
+  color: var(--color-text-dark);
+}
+
+.no-notifications {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.no-notifications svg {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .notification-page {
+    padding: 1rem;
+  }
+
+  .notification-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notification-filters {
+    flex-wrap: wrap;
+  }
+
+  .notification {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notification-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}

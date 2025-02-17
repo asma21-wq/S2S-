@@ -1,0 +1,28 @@
+.feedback-page {
+    text-align: center;
+    margin: 2rem;
+  }
+  
+  .feedback-page textarea {
+    width: 80%;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .feedback-page .submit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .feedback-page .submit-button:hover {
+    background-color: #0056b3;
+  }
+  

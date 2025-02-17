@@ -1,0 +1,144 @@
+/* Trending Page Container */
+.trending-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.trending-page h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.trending-page h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #3498db;
+}
+
+.trending-page > p {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Trending List */
+.trending-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.trending-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.trending-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+}
+
+.trending-item:hover::before {
+  width: 100%;
+}
+
+.trending-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  border-color: #3498db;
+}
+
+.trending-item h3 {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.2rem;
+  flex-grow: 1;
+  margin-right: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.trending-item a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #2ecc71;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+
+.trending-item a:hover {
+  background-color: #27ae60;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .trending-page {
+    padding: 1rem;
+  }
+
+  .trending-page h1 {
+    font-size: 2rem;
+  }
+
+  .trending-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .trending-item h3 {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .trending-item a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Accessibility Enhancements */
+.trending-item a:focus {
+  outline: 2px solid #2ecc71;
+  outline-offset: 2px;
+}
+
+/* Background Pattern */
+.trending-page {
+  background-color: #f4f6f7;
+  background-image: 
+    linear-gradient(45deg, rgba(46, 204, 113, 0.05) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(46, 204, 113, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}

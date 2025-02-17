@@ -1,0 +1,134 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #cdcdcd; /* Background color for the navbar */
+  border-radius: 15px; /* Add rounded corners */
+  position: sticky; /* Keeps navbar fixed at the top */
+  z-index: 1000; /* Ensures the navbar is on top of other elements */
+}
+
+
+/* Logo Styling */
+.logo img {
+  height: 70px;
+  width: 90px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Search Bar */
+.navbar-search {
+  flex-grow: 1;
+  max-width: 500px;
+  margin: 0 2rem;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #3498db;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* User Icons */
+.user-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-icons img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.user-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .navbar-search {
+    margin: 0;
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .user-icons {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Accessibility and Focus States */
+.navbar a:focus,
+.search-bar:focus,
+.user-icons img:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}

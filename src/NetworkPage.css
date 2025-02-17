@@ -1,0 +1,225 @@
+.network-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.network-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+/* Search and Filter Container */
+.search-filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.filter-container select {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  appearance: none;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-container select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Profiles Container */
+.profiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-card {
+  width: 300px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #3498db;
+}
+
+.profile-card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.profile-card p {
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+}
+
+.connect-btn,
+.message-btn {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.connect-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.message-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.connect-btn:hover,
+.message-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Articles Section */
+.articles-section {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.articles-section h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.article-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article-card h3 {
+  color: #3498db;
+  margin-bottom: 0.5rem;
+}
+
+.article-card p {
+  color: #7f8c8d;
+}
+
+.like-btn,
+.comment-btn {
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.like-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.comment-btn {
+  background-color: #2980b9;
+  color: white;
+}
+
+.like-btn:hover,
+.comment-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
+  }
+
+  .profiles-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .like-btn,
+  .comment-btn {
+    margin: 0.5rem 0;
+  }
+}
+.profile-card input[type="text"],
+.article-card textarea {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.profile-card button,
+.article-card button {
+  margin-right: 1rem;
+}
+
+.profile-card button:disabled {
+  background-color: gray;
+}
