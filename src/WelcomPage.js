@@ -4,8 +4,7 @@ import React , { useState, useEffect, useRef } from 'react';
 const WelcomPage = () => {
   const [typedText, setTypedText] = useState('');
   const phrases = [
-     "Where Ideas Ignite and Research Takes Flight!",
-    "Connect, Collaborate, and Innovate in Scientific Research"
+    "Unlock Opportunities, Exchange Skills, Build Your Future!"
    
   ];
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -49,7 +48,7 @@ const WelcomPage = () => {
 
     {/* Content Overlay */}
     <div className="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-4">
-      <h1 className="text-5xl text-white font-bold mb-6">INNOVERSE</h1>
+      <h1 className="text-5xl text-white font-bold mb-6">Service to Service</h1>
 
       {/* Typing Animation */}
       <p className="text-2xl mb-12 h-12">
