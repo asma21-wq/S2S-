@@ -1,52 +1,77 @@
 import React, { useState } from "react";
-import "./AddProjectPage.css"; // Import CSS file for styling
+import "./AddProjectPage.css";
+import { useNavigate } from "react-router-dom";
 
 function AddProjectPage() {
   const [project, setProject] = useState({
     title: "",
     description: "",
     category: "",
-    image: null,
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setProject({ ...project, [name]: value });
   };
 
-  const handleImageUpload = (e) => {
-    setProject({ ...project, image: e.target.files[0] });
+  // Function to add a new service
+  const addService = async (newService) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/services/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newService),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to add service");
+      }
+
+      const data = await response.json();
+      console.log("Service added:", data);
+      return data; // Return the added service data
+    } catch (error) {
+      console.error("Error adding service:", error);
+      throw error; // Re-throw the error for handling in the caller
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Perform logic for sharing the project (e.g., API call)
-    console.log("Project shared:", project);
 
-    // Clear the form after submission
-    setProject({
-      title: "",
-      description: "",
-      category: "",
-      image: null,
-    });
+    const newService = {
+      servicename: project.title,
+      description: project.description,
+      category: project.category,
+      username: "Current User", // Replace with actual username or fetch from context
+    };
 
-    alert("Your project has been shared successfully!");
+    try {
+      await addService(newService); // Call the addService function
+      navigate('/projects'); // Redirect to the projects page
+    } catch (error) {
+      console.error("Error adding service:", error);
+      alert("Failed to add service. Please try again.");
+    }
   };
 
   return (
     <div className="add-project-page">
-      <h1>Add New Project</h1>
+      <h1>Add New Service</h1>
       <form onSubmit={handleSubmit} className="project-form">
         <div className="form-group">
-          <label htmlFor="title">Project Title:</label>
+          <label htmlFor="title">Service Title:</label>
           <input
             type="text"
             id="title"
             name="title"
             value={project.title}
             onChange={handleChange}
-            placeholder="Enter project title"
+            placeholder="Enter service title"
             required
           />
         </div>
@@ -58,7 +83,7 @@ function AddProjectPage() {
             name="description"
             value={project.description}
             onChange={handleChange}
-            placeholder="Describe your project"
+            placeholder="Describe your service"
             rows="4"
             required
           />
@@ -74,28 +99,16 @@ function AddProjectPage() {
             required
           >
             <option value="">Select a category</option>
-            <option value="AI">AI</option>
-            <option value="Healthcare">Healthcare</option>
-            <option value="Energy">Energy</option>
-            <option value="Space">Space</option>
-            <option value="Agriculture">Agriculture</option>
-            <option value="Other">Other</option>
+            <option value="WebDev">Web Development</option>
+            <option value="MobileDev">Mobile Development</option>
+            <option value="GraphicDesign">Graphic Design</option>
+            <option value="GameDev">Game Development</option>
+            <option value="ProjectManagement">Project Management</option>
           </select>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="image">Project Image (optional):</label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
-            onChange={handleImageUpload}
-          />
-        </div>
-
         <button type="submit" className="submit-btn">
-          Share Project
+          Share Service
         </button>
       </form>
     </div>

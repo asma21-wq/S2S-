@@ -57,19 +57,14 @@ const WelcomPage = () => {
       </p>
 
       {/* Action Buttons */}
-      <div className="flex space-x-4">
+      <div className="flex space-x-5">
         <a
           href="/sign-up"
           className="bg-white text-blue-700 px-8 py-4 rounded-full hover:bg-black-100 transition font-semibold"
         >
-          Create Account
+          Get Started
         </a>
-        <a
-          href="/sign-up"
-          className="border border-white bg-blue text-white px-8 py-4 rounded-full hover:bg-blue-100 transition font-semibold"
-        >
-          Browse Research
-        </a>
+        
       </div>
     </div>
   </div>

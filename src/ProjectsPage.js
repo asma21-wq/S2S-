@@ -1,133 +1,108 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ProjectsPage.css";
-import p2 from './proj2.jpg';
-import p1 from './proj1.jpg';
-import { Link } from "react-router-dom";
-import {  ChevronLeft } from 'lucide-react';
+import { Link, useNavigate } from "react-router-dom";
+import { ChevronLeft } from 'lucide-react';
 
 function Projects() {
-  const [liked, setLiked] = useState({ project1: false, project2: false });
-  const [commentVisible, setCommentVisible] = useState(null); // For showing comment input
-  const [detailsVisible, setDetailsVisible] = useState(null); // For showing project details
+  const [services, setServices] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const navigate = useNavigate();
 
-  // Sample project details
-  const projectDetails = {
-    project1: {
-      title: "Revolutionizing Healthcare with AI",
-      description: "This project explores the use of AI to improve healthcare systems, making healthcare more efficient and accessible.",
-      timeline: "January 2023 - Ongoing",
-      objectives: "Develop AI-based models for patient diagnosis and treatment optimization.",
-    },
-    project2: {
-      title: "Sustainable Energy Solutions",
-      description: "A project focused on creating sustainable energy solutions for reducing carbon footprints and promoting clean energy.",
-      timeline: "March 2022 - Completed",
-      objectives: "Design and implement renewable energy systems, focusing on solar and wind technologies.",
-    },
+  // Fetch services from the backend
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/services');
+        if (!response.ok) {
+          throw new Error("Failed to fetch services");
+        }
+        const data = await response.json();
+        setServices(data);
+      } catch (error) {
+        console.error("Error fetching services:", error);
+      }
+    };
+    fetchServices();
+  }, []);
+
+  // Function to add a new service
+  const addService = async (newService) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/services', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newService),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to add service");
+      }
+
+      const data = await response.json();
+      setServices([...services, data]); // Add the new service to the state
+      navigate('/projects'); // Redirect to the projects page
+    } catch (error) {
+      console.error("Error adding service:", error);
+      alert("Failed to add service. Please try again.");
+    }
   };
 
-  // Handle Like button
-  const handleLike = (project) => {
-    setLiked((prev) => ({ ...prev, [project]: !prev[project] }));
-  };
-
-  // Handle Comment button visibility
-  const handleCommentClick = (project) => {
-    setCommentVisible(project === commentVisible ? null : project); // Toggle comment input visibility
-  };
-
-  // Handle View Details button visibility
-  const handleDetailsClick = (project) => {
-    setDetailsVisible(project === detailsVisible ? null : project); // Toggle details visibility
-  };
+  // Filter services based on search and category
+  const filteredServices = services.filter((service) => {
+    const matchesSearch = service.servicename.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = selectedCategory ? service.category === selectedCategory : true;
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="projects-container">
-     <Link to="/Home" className="back-link">
-          <ChevronLeft size={24} /> Back to Home Page
-        </Link>
-      <h1>Explore and Collaborate on Innovative Projects</h1>
+      <Link to="/Home" className="back-link">
+        <ChevronLeft size={24} /> Back to Home Page
+      </Link>
+      <h1>Explore and Collaborate on Innovative Services</h1>
 
       {/* Search and Filter Section */}
       <div className="search-filter-container">
         <input
           type="text"
-          placeholder="Search projects..."
+          placeholder="Search Service..."
           className="search-bar"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
         <div className="filter-container">
-          <select>
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
             <option value="">Filter by Category</option>
-            <option value="AI">Artificial Intelligence</option>
-            <option value="Healthcare">Healthcare</option>
-            <option value="Energy">Renewable Energy</option>
-          </select>
-          <select>
-            <option value="">Filter by Status</option>
-            <option value="Ongoing">Ongoing</option>
-            <option value="Completed">Completed</option>
+            <option value="WebDev">Web Development</option>
+            <option value="MobileDev">Mobile Development</option>
+            <option value="GraphicDesign">Graphic Design</option>
+            <option value="GameDev">Game Development</option>
+            <option value="ProjectManagement">Project Management</option>
           </select>
         </div>
       </div>
 
-      {/* Add New Project Button */}
+      {/* Add New Service Button */}
       <div className="add-project-section">
-        <Link to="/add-project" className="add-project-btn">+ Add New Project</Link>
+        <Link to="/add-project" className="add-project-btn">+ Add New Service</Link>
       </div>
 
-      {/* Project Cards */}
+      {/* Service Cards */}
       <div className="project-cards-container">
-        <div className="project-card">
-          <img src={p1} alt="User 1" className="profile-pic" />
-          <h3>Revolutionizing Healthcare with AI</h3>
-          <p>By: Dr. Jane Doe</p>
-          <p>Status: Ongoing</p>
-          <button className="details-btn" onClick={() => handleDetailsClick("project1")}>
-            {detailsVisible === "project1" ? "Hide Details" : "View Details"}
-          </button>
-          {detailsVisible === "project1" && (
-            <div className="project-details">
-              <p><strong>Description:</strong> {projectDetails.project1.description}</p>
-              <p><strong>Timeline:</strong> {projectDetails.project1.timeline}</p>
-              <p><strong>Objectives:</strong> {projectDetails.project1.objectives}</p>
-            </div>
-          )}
-
-          <button className="like-btn" onClick={() => handleLike("project1")}>
-            {liked.project1 ? "Liked" : "Like"}
-          </button>
-
-          <button className="comment-btn" onClick={() => handleCommentClick("project1")}>
-            Comment
-          </button>
-          {commentVisible === "project1" && <textarea placeholder="Type your comment..." />}
-        </div>
-
-        <div className="project-card">
-          <img src={p2} alt="User 2" className="profile-pic" />
-          <h3>Sustainable Energy Solutions</h3>
-          <p>By: John Smith</p>
-          <p>Status: Completed</p>
-          <button className="details-btn" onClick={() => handleDetailsClick("project2")}>
-            {detailsVisible === "project2" ? "Hide Details" : "View Details"}
-          </button>
-          {detailsVisible === "project2" && (
-            <div className="project-details">
-              <p><strong>Description:</strong> {projectDetails.project2.description}</p>
-              <p><strong>Timeline:</strong> {projectDetails.project2.timeline}</p>
-              <p><strong>Objectives:</strong> {projectDetails.project2.objectives}</p>
-            </div>
-          )}
-
-          <button className="like-btn" onClick={() => handleLike("project2")}>
-            {liked.project2 ? "Liked" : "Like"}
-          </button>
-
-          <button className="comment-btn" onClick={() => handleCommentClick("project2")}>
-            Comment
-          </button>
-          {commentVisible === "project2" && <textarea placeholder="Type your comment..." />}
-        </div>
+        {filteredServices.map((service) => (
+          <div key={service._id} className="project-card">
+            <h3>{service.servicename}</h3>
+            <p>By: {service.username}</p>
+            <p><strong>Category:</strong> {service.category}</p>
+            <p><strong>Description:</strong> {service.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,237 +1,208 @@
 /* General Container Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9fafb;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .max-w-4xl {
-    max-width: 64rem;
-    margin: 0 auto;
-  }
-  
-  .bg-white {
-    background-color: #ffffff;
-  }
-  
-  .shadow-lg {
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .rounded-lg {
-    border-radius: 0.5rem;
-  }
-  
-  .overflow-hidden {
-    overflow: hidden;
-  }
-  
-  /* Cover Photo and Profile Photo Section */
-  .relative {
-    position: relative;
-  }
-  
-  .w-full {
-    width: 100%;
-  }
-  
-  .h-48 {
-    height: 12rem;
-  }
-  
-  .object-cover {
-    object-fit: cover;
-  }
-  
-  .absolute {
-    position: absolute;
-  }
-  
-  .border {
-    border-width: 1px;
-  }
-  
-  .border-4 {
-    border-width: 4px;
-  }
-  
-  .rounded-full {
-    border-radius: 9999px;
-  }
-  
-  /* Basic Profile Information */
-  .text-center {
-    text-align: center;
-  }
-  
-  .text-2xl {
-    font-size: 1.5rem;
-  }
-  
-  .font-bold {
-    font-weight: 700;
-  }
-  
-  .text-gray-600 {
-    color: #4b5563;
-  }
-  
-  .flex {
-    display: flex;
-  }
-  
-  .justify-center {
-    justify-content: center;
-  }
-  
-  .gap-4 {
-    gap: 1rem;
-  }
-  
-  .mt-2 {
-    margin-top: 0.5rem;
-  }
-  
-  /* User Type Specific Section */
-  .p-6 {
-    padding: 1.5rem;
-  }
-  
-  .text-sm {
-    font-size: 0.875rem;
-  }
-  
-  .text-gray-800 {
-    color: #1f2937;
-  }
-  
-  .bg-gray-100 {
-    background-color: #f3f4f6;
-  }
-  
-  .px-3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-  
-  .py-1 {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-  }
-  
-  .rounded-full {
-    border-radius: 9999px;
-  }
-  
-  .inline-block {
-    display: inline-block;
-  }
-  
-  /* Posts Section */
-  .bg-gray-50 {
-    background-color: #f9fafb;
-  }
-  
-  .text-xl {
-    font-size: 1.25rem;
-  }
-  
-  .font-semibold {
-    font-weight: 600;
-  }
-  
-  .mb-4 {
-    margin-bottom: 1rem;
-  }
-  
-  .w-full {
-    width: 100%;
-  }
-  
-  .p-2 {
-    padding: 0.5rem;
-  }
-  
-  .border {
-    border-width: 1px;
-  }
-  
-  .rounded-lg {
-    border-radius: 0.5rem;
-  }
-  
-  .resize-none {
-    resize: none;
-  }
-  
-  /* Attachment Styles */
-  .flex-wrap {
-    flex-wrap: wrap;
-  }
-  
-  .gap-2 {
-    gap: 0.5rem;
-  }
-  
-  .relative {
-    position: relative;
-  }
-  
-  .h-20 {
-    height: 5rem;
-  }
-  
-  .w-20 {
-    width: 5rem;
-  }
-  
-  .object-cover {
-    object-fit: cover;
-  }
-  
-  .bg-red-500 {
-    background-color: #ef4444;
-  }
-  
-  .text-white {
-    color: #ffffff;
-  }
-  
-  .hover\:bg-blue-600:hover {
-    background-color: #2563eb;
-  }
-  
-  /* Post Card Styles */
-  .space-y-4 > :not([hidden]) ~ :not([hidden]) {
-    margin-top: 1rem;
-  }
-  
-  .bg-gray-50 {
-    background-color: #f9fafb;
-  }
-  
-  .p-4 {
-    padding: 1rem;
-  }
-  
-  .text-xs {
-    font-size: 0.75rem;
-  }
-  
-  .text-gray-500 {
-    color: #6b7280;
-  }
-  
-  .bg-blue-100 {
-    background-color: #dbeafe;
-  }
-  
-  .text-blue-800 {
-    color: #1e40af;
-  }
-  
-  .transition {
-    transition: all 0.2s;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0;
+}
+
+.max-w-4xl {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Cover Photo and Profile Photo Section */
+.relative {
+  position: relative;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-48 {
+  height: 12rem;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-4 {
+  border-width: 4px;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* Basic Profile Information */
+.text-center {
+  text-align: center;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+/* User Type Specific Section */
+.p-6 {
+  padding: 1.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-gray-800 {
+  color: #1f2937;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/* Posts Section */
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.resize-none {
+  resize: none;
+}
+
+/* Attachment Styles */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
+.w-20 {
+  width: 5rem;
+}
+
+.bg-red-500 {
+  background-color: #ef4444;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.hover\:bg-blue-600:hover {
+  background-color: #2563eb;
+}
+
+/* Post Card Styles */
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1rem;
+}
+
+.bg-blue-100 {
+  background-color: #dbeafe;
+}
+
+.text-blue-800 {
+  color: #1e40af;
+}
+
+.transition {
+  transition: all 0.2s;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}

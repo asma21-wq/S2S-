@@ -15,37 +15,42 @@ import {
 const mockNotifications = [
   {
     id: 1,
-    type: 'success',
-    title: 'Project Approved',
-    message: 'Your sustainable agriculture project has been approved for funding.',
-    timestamp: '2024-02-15 10:30',
-    read: false
+    type: 'message',
+    title: 'New Message',
+    message: 'Alex  sent you a new message.',
+    timestamp: '2024-02-13 09:15',
+    read: true
   },
+  
   {
     id: 2,
-    type: 'warning',
-    title: 'Deadline Approaching',
-    message: 'Your quarterly report is due in 3 days. Please complete and submit.',
-    timestamp: '2024-02-14 15:45',
+    type: 'review',
+    title: 'Review Request',
+    message: 'Please leave a review for the web development  service you received.',
+    timestamp: '2024-02-14 12:30',
     read: false
   },
+ 
+ 
   {
     id: 3,
     type: 'message',
-    title: 'New Message',
-    message: 'Alex from Research Team sent you a new message.',
-    timestamp: '2024-02-13 09:15',
-    read: true
+    title: 'New Inquiry',
+    message: 'Sarah inquired about your graphic  design service.',
+    timestamp: '2024-02-16 09:50',
+    read: false
   },
   {
     id: 4,
     type: 'info',
-    title: 'System Update',
-    message: 'A new version of the project management system will be deployed next week.',
-    timestamp: '2024-02-12 18:20',
+    title: 'Service Update',
+    message: 'Your listing for consulting services has been approved.',
+    timestamp: '2024-02-17 11:15',
     read: true
-  }
+  },
+  
 ];
+
 
 const NotificationPage = () => {
   const [notifications, setNotifications] = useState(mockNotifications);
@@ -110,18 +115,8 @@ const NotificationPage = () => {
         >
           Unread
         </button>
-        <button 
-          className={filter === 'success' ? 'active' : ''} 
-          onClick={() => setFilter('success')}
-        >
-          Success
-        </button>
-        <button 
-          className={filter === 'warning' ? 'active' : ''} 
-          onClick={() => setFilter('warning')}
-        >
-          Warnings
-        </button>
+        
+        
         <button 
           className={filter === 'message' ? 'active' : ''} 
           onClick={() => setFilter('message')}

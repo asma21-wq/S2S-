@@ -5,127 +5,112 @@ import './ProjectDetailPage.css';
 
 const projectsData = {
   1: {
-    title: 'AI for Healthcare',
-    description: 'A cutting-edge solution for personalized diagnostics.',
-    details: 'AI can revolutionize healthcare by offering personalized diagnostics based on patient data and improving the speed and accuracy of medical procedures.',
-    timeline: '18 months',
-    scope: 'Global Healthcare Systems',
-    technologies: ['Machine Learning', 'Deep Learning', 'Neural Networks'],
-    impact: [
-      'Faster disease detection',
-      'Personalized treatment plans', 
-      'Reduced diagnostic errors'
-    ],
+    title: 'Web Development',
+    description: 'Building responsive and modern websites tailored to your needs.',
+    details: 'Our web development services include creating highly functional, user-friendly, and visually appealing websites using the latest technologies.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Next.js'],
     keyFeatures: [
-      'Advanced predictive analytics',
-      'Real-time patient data processing',
-      'Integrated medical imaging analysis'
+      'SEO-friendly design',
+      'Cross-platform compatibility',
+      'Optimized performance'
     ],
-    collaborators: ['Medical Research Institute', 'Global Health Tech'],
-    challengesSolved: [
-      'Early disease detection',
-      'Precision medicine',
-      'Healthcare accessibility'
-    ]
+
   },
   2: {
-    title: 'Renewable Energy Mapping',
-    description: 'Explore global opportunities for clean energy development.',
-    details: 'Mapping renewable energy resources helps identify ideal locations for energy generation, promoting sustainability and reducing dependence on fossil fuels.',
-    timeline: '24 months',
-    scope: 'International Renewable Energy Assessment',
-    technologies: ['GIS Mapping', 'Satellite Imagery', 'Data Analytics'],
-    impact: [
-      'Reduced carbon emissions',
-      'Sustainable energy planning',
-      'Economic opportunities'
-    ],
+    title: 'Mobile Development',
+    description: 'Creating mobile apps for Android and iOS platforms.',
+    details: 'Our mobile development services focus on creating intuitive and feature-rich applications that work seamlessly on all devices.',
+    technologies: ['React Native', 'Expo', 'Flutter'],
+    
     keyFeatures: [
-      'Global renewable resource database',
-      'Interactive mapping visualization',
-      'Climate impact prediction'
+      'Cross-platform development',
+      'Offline functionality',
+      'Push notifications',
+      'Integration with backend services',
+      'Custom UI/UX design'
     ],
-    collaborators: ['World Energy Council', 'Climate Research Center'],
-    challengesSolved: [
-      'Energy transition strategy',
-      'Renewable site selection',
-      'Climate change mitigation'
-    ]
+    
+    
   },
   3: {
-    title: 'Quantum Computing Applications',
-    description: 'Innovative ideas for future computational advancements.',
-    details: 'Quantum computing holds the potential to revolutionize fields like cryptography, materials science, and complex simulations that classical computers cannot handle.',
-    timeline: '36 months',
-    scope: 'Advanced Computational Research',
-    technologies: ['Quantum Algorithms', 'Quantum Hardware', 'Cryptography'],
-    impact: [
-      'Breakthrough computational power',
-      'Advanced scientific simulations',
-      'Enhanced cybersecurity'
-    ],
+    title: 'Graphic Design',
+    description: 'Transforming ideas into visually stunning designs.',
+    details: 'We offer graphic design services that help bring your brand to life with creative and impactful visuals.',
+    technologies: ['Adobe Photoshop', 'Illustrator', 'InDesign', 'CorelDRAW'],
+
+
     keyFeatures: [
-      'Quantum error correction',
-      'Scalable quantum architecture',
-      'Cross-domain problem solving'
+      'Custom logo design',
+      'Brand identity development',
+      'Print and digital media design',
+      'High-quality vector graphics',
+      'Creative typography and layout'
     ],
-    collaborators: ['Quantum Research Labs', 'Tech Innovation Institute'],
-    challengesSolved: [
-      'Complex mathematical modeling',
-      'Cryptographic security',
-      'Scientific research limitations'
-    ]
   },
   4: {
-    title: 'Space Exploration 2030',
-    description: 'A roadmap to the next frontier of space research.',
-    details: 'Space exploration will push the boundaries of human knowledge, enabling missions to Mars, studying exoplanets, and searching for extraterrestrial life.',
-    timeline: '60 months',
-    scope: 'Interplanetary Research Mission',
-    technologies: ['Aerospace Engineering', 'Robotic Systems', 'Advanced Propulsion'],
-    impact: [
-      'Mars mission readiness',
-      'Exoplanet discovery',
-      'Human space exploration advancement'
-    ],
+    title: 'Game Development',
+    description: 'Designing and developing immersive gaming experiences.',
+    details: 'Our game development services include creating engaging and interactive games for various platforms.',
+    technologies: ['Unity', 'Unreal Engine', 'C#', 'Blender'],
     keyFeatures: [
-      'Advanced spacecraft design',
-      'Long-duration space survival systems',
-      'Autonomous exploration robotics'
+      '2D and 3D game development',
+      'Multiplayer game integration',
+      'Real-time physics and animations',
+      'Cross-platform game deployment',
+      'Custom game mechanics and AI'
     ],
-    collaborators: ['NASA', 'International Space Agency'],
-    challengesSolved: [
-      'Sustainable space travel',
-      'Extraterrestrial research',
-      'Human spaceflight barriers'
-    ]
   },
   5: {
-    title: 'Sustainable Agriculture',
-    description: 'New practices to combat global food challenges.',
-    details: 'Sustainable agriculture promotes efficient resource use, reduces waste, and supports food security, while minimizing environmental impact.',
-    timeline: '30 months',
-    scope: 'Global Agricultural Transformation',
-    technologies: ['IoT', 'AI Crop Management', 'Precision Farming'],
-    impact: [
-      'Increased crop yields',
-      'Water conservation',
-      'Reduced environmental footprint'
-    ],
+    title: 'Figma Prototyping',
+    description: 'Bringing your ideas to life with interactive prototypes.',
+    details: 'We provide Figma prototyping services to visualize and test your product designs before development.',
+    technologies: ['Figma', 'Sketch', 'Adobe XD'],
+    
     keyFeatures: [
-      'Smart irrigation systems',
-      'Crop health monitoring',
-      'Predictive farming analytics'
+      'Interactive prototypes',
+      'Collaborative design environment',
+      'High-fidelity wireframes'
     ],
-    collaborators: ['Agricultural Research Center', 'Global Food Initiative'],
-    challengesSolved: [
-      'Food security',
-      'Climate-resilient farming',
-      'Resource optimization'
-    ]
-  },
-};
 
+   
+  },
+ 6:{
+  title: 'AI Chatbot Development',
+  description: 'Creating intelligent chatbots to enhance customer interaction and automate responses.',
+  details: 'We specialize in developing AI-driven chatbots that can understand and respond to user queries effectively, improving customer service and engagement.',
+  technologies: ['Dialogflow', 'Rasa', 'Microsoft Bot Framework', 'TensorFlow'],
+  keyFeatures: [
+    'Natural Language Processing (NLP)',
+    'Customizable conversation flows',
+    'Integration with messaging platforms (e.g., WhatsApp, Facebook Messenger)'
+  ],
+},
+7:{
+  title: 'Database Management',
+  description: 'Managing and optimizing databases for improved performance and security.',
+  details: 'Our team provides comprehensive database management services, including database design, optimization, and maintenance to ensure seamless operations.',
+  technologies: ['MySQL', 'PostgreSQL', 'MongoDB', 'Firebase', 'SQL Server'],
+  keyFeatures: [
+    'Database optimization and indexing',
+    'Data migration and backup solutions',
+    'Secure data storage and access management'
+  ],
+}
+,
+8:{
+  title: 'Cybersecurity Services',
+  description: 'Protecting your digital assets from cyber threats with expert security solutions.',
+  details: 'We offer end-to-end cybersecurity services, including vulnerability assessments, penetration testing, and network security setup to safeguard your systems and data.',
+  technologies: ['Wireshark', 'Nmap', 'Metasploit', 'Kali Linux'],
+  keyFeatures: [
+    'Penetration testing and vulnerability assessments',
+    'Network security monitoring',
+    'Encryption and data protection strategies'
+  ],
+}
+,
+
+};
 const ProjectDetailPage = () => {
   const { id } = useParams();
   const project = projectsData[id];
@@ -142,11 +127,11 @@ const ProjectDetailPage = () => {
 
       <div className="project-detail-grid">
         <div className="project-main-details">
-          <h2>Project Overview</h2>
+          <h2>Service Overview</h2>
           <p>{project.details}</p>
 
           <div className="project-key-features">
-            <h3>Key Features</h3>
+            <h3>Features Provided</h3>
             <ul>
               {project.keyFeatures.map((feature, index) => (
                 <li key={index}>{feature}</li>
@@ -157,18 +142,9 @@ const ProjectDetailPage = () => {
 
         <div className="project-sidebar">
           <div className="project-metadata">
-            <div className="metadata-item">
-              <Clock size={20} />
-              <span>Timeline: {project.timeline}</span>
-            </div>
-            <div className="metadata-item">
-              <Globe size={20} />
-              <span>Scope: {project.scope}</span>
-            </div>
-            <div className="metadata-item">
-              <Briefcase size={20} />
-              <span>Collaborators: {project.collaborators.join(', ')}</span>
-            </div>
+            
+
+            
           </div>
 
           <div className="project-technologies">
@@ -180,23 +156,9 @@ const ProjectDetailPage = () => {
             </div>
           </div>
 
-          <div className="project-impact">
-            <h3>Project Impact</h3>
-            <ul>
-              {project.impact.map((impact, index) => (
-                <li key={index}>{impact}</li>
-              ))}
-            </ul>
-          </div>
+          
 
-          <div className="project-challenges">
-            <h3>Challenges Solved</h3>
-            <ul>
-              {project.challengesSolved.map((challenge, index) => (
-                <li key={index}>{challenge}</li>
-              ))}
-            </ul>
-          </div>
+         
         </div>
       </div>
     </div>

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import HomePage from "./HomePage";
-import GetStartedPage from "./GetStartedPage";
-import DashboardPage from "./DashboardPage";
 import NetworkPage from "./NetworkPage";
 import ProjectsPage from "./ProjectsPage";
 import DiscussionsPage from "./DiscussionsPage";
@@ -14,10 +12,12 @@ import Navbar from "./Navbar";
 import Footer from './Footer'; 
 import AddProjectPage from './AddProjectPage';
 import FeedbackPage from './FeedbackPage'; // Import the FeedbackPage component
-import DiscussionDetailPage from "./DiscussionDetailPage";
 import ProjectDetailPage from './ProjectDetailPage';
 import ProfilePage from './ProfilePage';
 import NotificationPage from './User Notification Page';
+import AddExperiencePage from "./AddExperiencePage";
+import AddEducationPage from "./AddEducation";
+import FeedbackSubmissionPage from "./FeedbackSubmissionPage";
 
 function App() {
   // Component to hide Navbar on specific routes
@@ -102,16 +102,17 @@ function App() {
 
         {/* Other routes */}
         <Route path="/home" element={<HomePage />} />
+        <Route path="/add-experience" element={<AddExperiencePage />} />
+        <Route path="/add-education" element={<AddEducationPage />} />
+        <Route path="/feedback-submission" element={<FeedbackSubmissionPage />} />
+
         <Route path="/project/:id" element={<ProjectDetailPage />} />
-        <Route path="/get-started" element={<GetStartedPage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/network" element={<NetworkPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/discussions" element={<DiscussionsPage />} />
         <Route path="/trending" element={<TrendingPage />} />
         <Route path="/add-project" element={<AddProjectPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
-        <Route path="/discussion/:id" element={<DiscussionDetailPage />} />
         <Route path="/Profile" element={<ProfilePage />} />
         <Route path="/Notification" element={<NotificationPage />} />
 

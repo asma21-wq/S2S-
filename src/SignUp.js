@@ -3,8 +3,10 @@ import './SignInSignUp.css';
 function SignUpForm() {
   const [state, setState] = React.useState({
     name: "",
+    prenom: "",
     email: "",
-    password: ""
+    password: "",
+    userType: "researcher" // Default userType
   });
   const handleChange = evt => {
     const value = evt.target.value;
@@ -14,19 +16,33 @@ function SignUpForm() {
     });
   };
 
-  const handleOnSubmit = evt => {
+  const handleOnSubmit = async (evt)  => {
     evt.preventDefault();
 
-    const { name, email, password } = state;
-    alert(
-      `You are sign up with name: ${name} email: ${email} and password: ${password}`
-    );
-
-    for (const key in state) {
-      setState({
-        ...state,
-        [key]: ""
+    const { name, prenom, email, password, userType } = state;
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, prenom, email, password, userType }),
       });
+      const data = await response.json();
+      if (response.ok) {
+        alert(data.message); // Show success message
+        setState({
+          name: "",
+          prenom: "",
+          email: "",
+          password: "",
+        });
+      } else {
+        alert(`Error: ${data.message}`); // Show error message from backend
+      }
+    } catch (error) {
+      console.error('Error during signup:', error);
+      alert('An error occurred. Please try again.');
     }
   };
 
@@ -53,6 +69,14 @@ function SignUpForm() {
           onChange={handleChange}
           placeholder="Name"
         />
+          <input
+          type="text"
+          name="prenom"
+          value={state.prenom}
+          onChange={handleChange}
+          placeholder="Family Name"
+          required
+        />
         <input
           type="email"
           name="email"
@@ -67,6 +91,9 @@ function SignUpForm() {
           onChange={handleChange}
           placeholder="Password"
         />
+          <div>
+          
+        </div>
         <button>Sign Up</button>
       </form>
     </div>

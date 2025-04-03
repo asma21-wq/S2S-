@@ -10,20 +10,24 @@ const TrendingPage = () => {
     <Link to="/Home" className="back-link">
           <ChevronLeft size={24} /> Back to Home Page
         </Link>
-      <h1>Trending Research and Ideas</h1>
-      <p>Check out the most popular and discussed research topics in the community.</p>
+      <h1>Emerging Services</h1>
+      <p>
+      
+  Discover the latest and most innovative emerging services. If you have the skills, be among the first to offer them as they become available! For any inquiries, please <Link to="/contact">contact us</Link>.
+
+</p>
       <div className="trending-list">
         <div className="trending-item">
-          <h3>AI in Medicine</h3>
-          <Link to="/project/1">Explore Project</Link>
+          <h3> AI Chatbot Development</h3>
+          <Link to="/project/6">Explore service </Link>
         </div>
         <div className="trending-item">
-          <h3>Blockchain for Secure Voting</h3>
-          <Link to="/project/2">Explore Project</Link>
+          <h3>Database Management</h3>
+          <Link to="/project/7">Explore service</Link>
         </div>
         <div className="trending-item">
-          <h3>Quantum Computing in Financial Markets</h3>
-          <Link to="/project/3">Explore Project</Link>
+          <h3> Cybersecurity Services          </h3>
+          <Link to="/project/8">Explore service</Link>
         </div>
       </div>
     </div>

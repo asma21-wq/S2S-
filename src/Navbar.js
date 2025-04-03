@@ -19,14 +19,14 @@ function Navbar() {
         <input
           type="text"
           className="search-bar"
-          placeholder="Search for ideas, projects, or discussions..."
+          placeholder="Search for ideas, services, or discussions..."
         />
       </div>
       
       <ul className="nav-links">
         <li><Link to="/network">Network</Link></li>
-        <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/discussions">Discussions</Link></li>
+        <li><Link to="/projects">Services</Link></li>
+        <li><Link to="/discussions">Q&A</Link></li>
         <li><Link to="/trending">Trending</Link></li>
       </ul>
       
