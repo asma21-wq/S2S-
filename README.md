@@ -23,7 +23,7 @@ Integrated chatbot to provide smart, context-aware user support
 # Web App Instructions
 Clone Repository:
 git clone (https://github.com/asma21-wq/S2S-.git)
-cd s2s-web
+cd S2S
 # Install Dependencies:
 npm install
 # Run Development Server:
